@@ -5,19 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Media Exercise</title>
 </head>
-<body>
+<body  style="background-image: url(./assets/images/background.jpg); background-position: bottom center; background-repeat: no-repeat; background-color: green;">
   <div class="container">
     <!-- AUDIO HTML GOES HERE -->
+    <section>
+      <audio src="./assets/audio/piano.wav" controls muted loop></audio>
+    </section>
 
     <!-- VIDEO HTML GOES HERE -->
+    <section>
+      <video src="./assets/video/ocean.mp4" controls muted poster="./assets/images/poster.jpg"></video>
+    </section>
 
     <!-- IMAGE MAP HTML GOES HERE-->
+    <section>
+      <img src="./assets/images/fruit_table.jpg" alt="fruits" usemap="#fruits_map" width="600">
+      <map id="fruits_map">
+        <area shape="rect" coords="30,100,230,500" href="https://en.wikipedia.org/wiki/Lavandula" alt="lavender">
+        <area shape="rect" coords="330,420,520,600" href="https://en.wikipedia.org/wiki/Orange_(fruit)" alt="oranges">
+        <area shape="circle" coords="470,200,50" href="https://en.wikipedia.org/wiki/Coffee" alt="coffee">
+      </map>
+    </section>
 
     <!-- CANVAS HTML GOES HERE -->
+    <section>
+      <canvas id="myCanvas" width="500" height="500"></canvas>
+    </section>
+
   </div>
 
   <script>
     /* CANVAS JAVASCRIPT GOES HERE */
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    ctx.fillStyle = "#f0f0f0"; 
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.beginPath();
+    ctx.moveTo(100, 100);
+    ctx.lineTo(400, 100);
+    ctx.strokeStyle = "red";
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(400, 100);
+    ctx.lineTo(400, 400);
+    ctx.strokeStyle = "blue";
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(400, 400);
+    ctx.lineTo(100, 400);
+    ctx.strokeStyle = "green";
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(100, 400);
+    ctx.lineTo(100, 100);
+    ctx.strokeStyle = "purple";
+    ctx.stroke();
   </script>
 </body>
 </html>
